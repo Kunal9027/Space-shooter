@@ -149,25 +149,25 @@ while runing:
   
         button_preesed = pygame.key.get_pressed()
             
-        if button_preesed[pygame.K_a] and SHIP.x > 0:
-            SHIP.x -= VELOCITY
-        if button_preesed[pygame.K_d] and SHIP.x < WEIDTH - 70 :
-            SHIP.x += VELOCITY
-        if button_preesed[pygame.K_w] and SHIP.y > 0 :
-            SHIP.y -= VELOCITY
-        if button_preesed[pygame.K_s] and SHIP.y < HEIGHT - 70 :
-            SHIP.y += VELOCITY
+    if button_preesed[pygame.K_a] and SHIP.x > 0:
+        SHIP.x -= VELOCITY
+    if button_preesed[pygame.K_d] and SHIP.x < WEIDTH - 70 :
+        SHIP.x += VELOCITY
+    if button_preesed[pygame.K_w] and SHIP.y > 0 :
+        SHIP.y -= VELOCITY
+    if button_preesed[pygame.K_s] and SHIP.y < HEIGHT - 70 :
+        SHIP.y += VELOCITY
 
     for BUllet in YELLOW_bullets:
         if enemy.rect.colliderect(BUllet):
             SCORE += SCORE_inc
-        elif enemy_2.rect.colliderect(BUllet):
+        if enemy_2.rect.colliderect(BUllet):
             SCORE += SCORE_inc
-        elif enemy_3.rect.colliderect(BUllet):
+        if enemy_3.rect.colliderect(BUllet):
             SCORE += SCORE_inc    
-        elif enemy_4.rect.colliderect(BUllet):
+        if enemy_4.rect.colliderect(BUllet):
             SCORE += SCORE_inc               
-        elif enemy_5.rect.colliderect(BUllet):
+        if enemy_5.rect.colliderect(BUllet):
             SCORE += SCORE_inc    
     
     SCREEN.fill(BG_COLOR)
